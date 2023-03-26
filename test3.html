@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    background-image: url('image1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+  }
+  h1,h2 {text-align: center;}
+  .wrapper {
+    text-align: center;
+}
+
+b {font-size: 18px;}
+
+.button {
+    background-color: #1204aa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    position: absolute;
+    top: 80%;
+    left: 41%;
+}
+.form-body {
+  padding:100px 100px;
+  color:rgb(255, 166, 0);
+  border: 2px solid rgb(8, 0, 255);
+}
+#myform{
+  margin-bottom:50px;
+}
+.form-input {
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #333333;
+    text-align: left;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+}
+</style>
+
+<script>
+  function myfunction() {
+    let allFeild = true;
+    var x = document.getElementById("name");
+    // console.log(typeof x.value);
+    // x = JSON.stringify(x);
+    // console.log(typeof x);
+    // console.log(x)
+    if(x.value.trim().length == 0){
+      allFeild = false;
+    }
+    x = document.getElementById("rollNo");
+    if(x.value.trim().length == 0){
+      allFeild = false;
+    }
+    x = document.getElementById("contact_no");
+    if(x.value.trim().length == 0){
+      allFeild = false;
+    }
+    x = document.getElementById("DOB");
+    if(x.value.trim().length == 0){
+      allFeild = false;
+    }
+    x = document.getElementById("password");
+    if(x.value.trim().length == 0){
+      allFeild = false;
+    }
+    if(allFeild){
+      window.location.href='/Users/araj/Desktop/WebopsApp/registration_form/test4.html';
+      document.getElementById("name").value = ""; // Clear the input value
+      document.getElementById("rollNo").value = ""; // Clear the input value
+      document.getElementById("contact_no").value = ""; // Clear the input value
+      document.getElementById("DOB").value = ""; // Clear the input value
+      document.getElementById("password").value = ""; // Clear the input value
+    }
+    else{
+      alert ("Please fill in all details.");  
+    }
+  }
+</script>
+<body>
+
+  <h1 > Registration form</h1>
+    <h2> Fill in your details</h2>
+    <div class = "form-body">
+    
+    <div id = "myform"> 
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter name" name="name" id="name" class = "form-input" required>
+      <br /> 
+      <br /> 
+      <label for="rollNo"><b>Roll number</b></label>
+      <input type="text" placeholder="Enter roll number" name="rollNo" id="rollNo" class = "form-input" required>
+      <br /> 
+      <br /> 
+      <label for="contact_no"><b>Phone number</b></label>
+      <input type="text" placeholder="Enter phone no." name="contact_no" id="contact_no" class = "form-input" required>
+      <br /> 
+      <br />  
+      <label for="DOB"><b>Date of birth</b></label>
+      <input type="text" placeholder="Enter DOB" name="DOB" id="DOB" class = "form-input" required>
+      <br /> 
+      <br />  
+      <label for="password"><b>Password</b></label>
+      <input type="text" placeholder="Enter password" name="password" id="password" class = "form-input" required>
+      <br /> 
+      <br /> 
+      <div class="wrapper">
+        <button class="button" onclick="myfunction()">Register</button>
+    </div>
+    </div>
+     
+
+    
+
+</body>
+</html>
+

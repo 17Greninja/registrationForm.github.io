@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    background-image: url('image1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+  }
+  h1,h2 {text-align: center;}
+  .wrapper {
+    text-align: center;
+}
+
+b {font-size: 18px;}
+
+.button {
+    background-color: #1204aa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 41%;
+}
+.form-body {
+  padding:100px 100px;
+  color:rgb(255, 166, 0);
+  border: 3px solid rgb(8, 0, 255);
+}
+#myform{
+  margin-bottom:100px;
+}
+.form-input {
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #333333;
+    text-align: left;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+}
+</style>
+
+<script>
+  function myfunction() {
+    let allFeild = true;
+    // var x = document.getElementById("name");
+    // console.log(typeof x.value);
+    // x = JSON.stringify(x);
+    // console.log(typeof x);
+    // console.log(x)
+    var x = document.getElementById("rollNo");
+    if(x.value.trim().length == 0){
+      allFeild = false;
+    }
+    x = document.getElementById("password");
+    if(x.value.trim().length == 0){
+      allFeild = false;
+    }
+    if(allFeild){
+      x = document.getElementById("rollNo");
+      if(x.value.toUpperCase() != "CS20B008"){
+        alert ("Incorrect details.");  
+        return;
+      }
+      x = document.getElementById("password");
+      if(x.value.toUpperCase() != "CS20B008"){
+        alert ("Incorrect details.");  
+        return;
+      }
+      window.location.href='/Users/araj/Desktop/WebopsApp/registration_form/test5.html';
+    }
+    else{
+      alert ("Please fill in all details.");  
+    }
+  }
+</script>
+<body>
+
+  <h1 > Login </h1>
+  <h2> Fill in your details</h2>
+  <div id = "myform">
+    <div class = "form-body">
+      <label for="rollNo"><b>Roll number</b></label>
+      <input type="text" placeholder="Enter roll number" name="rollNo" id="rollNo" class = "form-input" required>
+      <br /> 
+      <br /> 
+      
+      <label for="password"><b>Password</b></label>
+      <input type="text" placeholder="Enter password" name="password" id="password" class = "form-input" required>
+      <br /> 
+      <br /> 
+      <div class="wrapper">
+        <button class="button" onclick="myfunction()">Login</button>
+      </div>
+    </div>
+  </div>
+     
+
+    
+
+</body>
+</html>
+
